@@ -69,6 +69,7 @@ public class CalendarView extends LinearLayout {
     private CalendarViewPager mViewPager;
 
     private CalendarProperties mCalendarProperties;
+    private CalendarPageAdapter.MonthLoadedListener monthLoadedListener;
 
     public CalendarView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -344,6 +345,11 @@ public class CalendarView extends LinearLayout {
      */
     public void setOnDayClickListener(OnDayClickListener onDayClickListener) {
         mCalendarProperties.setOnDayClickListener(onDayClickListener);
+    }
+
+    public void setOnMonthLoadedListener(CalendarPageAdapter.MonthLoadedListener monthLoadedListener){
+        this.monthLoadedListener = monthLoadedListener;
+        mCalendarPageAdapter.setCallback(monthLoadedListener);
     }
 
     /**

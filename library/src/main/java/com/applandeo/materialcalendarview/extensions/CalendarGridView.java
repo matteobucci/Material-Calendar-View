@@ -1,9 +1,6 @@
 package com.applandeo.materialcalendarview.extensions;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.widget.GridView;
 
@@ -33,14 +30,4 @@ public class CalendarGridView extends GridView {
         super.onMeasure(widthMeasureSpec, expandSpec);
     }
 
-    Paint paint = new Paint();
-
-    @Override
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        paint.setColor(Color.RED);
-        paint.setStrokeWidth(10);
-        canvas.drawLine(10, 10, 100, 100, paint);
-
-    }
 }

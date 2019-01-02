@@ -1,13 +1,18 @@
 package com.applandeo.materialcalendarsampleapp;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.applandeo.materialcalendarsampleapp.utils.DrawableUtils;
 import com.applandeo.materialcalendarview.CalendarView;
 import com.applandeo.materialcalendarview.EventDay;
+import com.applandeo.materialcalendarview.adapters.CalendarPageAdapter;
 import com.applandeo.materialcalendarview.exceptions.OutOfDateRangeException;
 import com.applandeo.materialcalendarview.utils.DateUtils;
 
@@ -59,7 +64,7 @@ public class CalendarActivity extends AppCompatActivity {
         calendarView.setMinimumDate(min);
         calendarView.setMaximumDate(max);
 
-        calendarView.setEvents(events);
+       // calendarView.setEvents(events);
 
         calendarView.setDisabledDays(getDisabledDays());
 
@@ -82,6 +87,15 @@ public class CalendarActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),
                         "Date is out of range",
                         Toast.LENGTH_LONG).show();
+            }
+        });
+
+        calendarView.setOnMonthLoadedListener((monthNumber, faceViews, lineViews) -> {
+            for(int i = 0; i < faceViews.length; i++){
+                if(i % 2 == 0){
+                    faceViews[i].setImageDrawable(ContextCompat.getDrawable(CalendarActivity.this, R.drawable.ic_favorite));
+                    lineViews[i].setBackgroundColor(ContextCompat.getColor(CalendarActivity.this, R.color.colorAccent));
+                }
             }
         });
     }
