@@ -2,6 +2,9 @@ package com.applandeo.materialcalendarview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.ColorRes;
 import android.support.v4.view.ViewPager;
@@ -247,6 +250,7 @@ public class CalendarView extends LinearLayout {
         mViewPager.addOnPageChangeListener(onPageChangeListener);
 
         setUpCalendarPosition(Calendar.getInstance());
+
     }
 
     private void setUpCalendarPosition(Calendar calendar) {
@@ -457,4 +461,5 @@ public class CalendarView extends LinearLayout {
     public void setDisabledDays(List<Calendar> disabledDays) {
         mCalendarProperties.setDisabledDays(disabledDays);
     }
+
 }
