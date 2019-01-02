@@ -58,15 +58,17 @@ public class CalendarPageAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
         LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        mCalendarGridView = (CalendarGridView) inflater.inflate(R.layout.calendar_view_grid, null);
+        View v = inflater.inflate(R.layout.calendar_view_turns, null);
+
+        mCalendarGridView = v.findViewById(R.id.calendarGridView);
 
         loadMonth(position);
 
         mCalendarGridView.setOnItemClickListener(new DayRowClickListener(this,
                 mCalendarProperties, mPageMonth));
 
-        container.addView(mCalendarGridView);
-        return mCalendarGridView;
+        container.addView(v);
+        return v;
     }
 
     public void addSelectedDay(SelectedDay selectedDay) {
