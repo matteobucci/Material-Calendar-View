@@ -2,6 +2,7 @@ package com.applandeo.materialcalendarview.adapters
 
 import android.content.Context
 import android.support.v4.view.PagerAdapter
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,6 +32,10 @@ class CalendarPageAdapter(private val mContext: Context, private val mCalendarPr
     public interface MonthLoadedListener{
         fun onMonthLoaded(monthNumber: Int, faceViews: Array<ImageView>, lineViews: Array<View>)
     }
+
+    val viewMap: MutableMap<Int, Pair<Array<ImageView>, Array<View>>> = mutableMapOf()
+
+    val TAG = CalendarPageAdapter::class.java.simpleName
 
     private var callback: MonthLoadedListener? = null
 
@@ -70,6 +75,8 @@ class CalendarPageAdapter(private val mContext: Context, private val mCalendarPr
     }
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
+        Log.i(TAG, "Created position ${position}")
+
         val inflater = mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         val v = inflater.inflate(R.layout.calendar_view_turns, null)
 
@@ -95,6 +102,7 @@ class CalendarPageAdapter(private val mContext: Context, private val mCalendarPr
 
         loadMonth(position)
 
+        viewMap.put(position, Pair(faceViews, lineViews))
         callback?.onMonthLoaded(position, faceViews, lineViews)
 
         mCalendarGridView!!.onItemClickListener = DayRowClickListener(this,
@@ -168,10 +176,19 @@ class CalendarPageAdapter(private val mContext: Context, private val mCalendarPr
     }
 
     override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
+        Log.i(TAG, "Destroyed position ${position}")
+        viewMap.remove(position)
         container.removeView(`object` as View)
     }
 
     fun setCallback(callback: MonthLoadedListener?){
         this.callback = callback
     }
+
+    fun redrawMonths(){
+        for (key in viewMap.keys) {
+            callback?.onMonthLoaded(key, viewMap[key]!!.first, viewMap[key]!!.second)
+        }
+    }
+
 }

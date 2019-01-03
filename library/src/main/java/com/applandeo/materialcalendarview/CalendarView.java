@@ -468,4 +468,8 @@ public class CalendarView extends LinearLayout {
         mCalendarProperties.setDisabledDays(disabledDays);
     }
 
+    public void refreshMonths(){
+        mCalendarPageAdapter.redrawMonths();
+    }
+
 }
