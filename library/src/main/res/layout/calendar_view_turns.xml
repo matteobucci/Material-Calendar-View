@@ -18,32 +18,44 @@
         <View
             android:id="@+id/view1"
             android:layout_width="match_parent"
-            android:layout_height="44dp" />
+            android:layout_height="36dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp" />
 
         <View
             android:id="@+id/view2"
             android:layout_width="match_parent"
-            android:layout_height="44dp" />
+            android:layout_height="36dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp" />
 
         <View
             android:id="@+id/view3"
             android:layout_width="match_parent"
-            android:layout_height="44dp" />
+            android:layout_height="36dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp" />
 
         <View
             android:id="@+id/view4"
             android:layout_width="match_parent"
-            android:layout_height="44dp" />
+            android:layout_height="36dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp" />
 
         <View
             android:id="@+id/view5"
             android:layout_width="match_parent"
-            android:layout_height="44dp" />
+            android:layout_height="36dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp" />
 
         <View
             android:id="@+id/view6"
             android:layout_width="match_parent"
-            android:layout_height="44dp" />
+            android:layout_height="36dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp" />
 
 
     </LinearLayout>
@@ -58,47 +70,53 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imageView1"
             android:layout_width="50dp"
             android:layout_height="44dp"
             android:layout_weight="1"
-            tools:srcCompat="@tools:sample/avatars" />
+            android:padding="8dp"
+            tools:src="@tools:sample/avatars" />
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imageView6"
             android:layout_width="50dp"
             android:layout_height="44dp"
             android:layout_weight="1"
-            tools:srcCompat="@tools:sample/avatars" />
+            android:padding="8dp"
+            tools:src="@tools:sample/avatars" />
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imageView5"
             android:layout_width="50dp"
             android:layout_height="44dp"
             android:layout_weight="1"
-            tools:srcCompat="@tools:sample/avatars" />
+            android:padding="8dp"
+            tools:src="@tools:sample/avatars" />
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imageView4"
             android:layout_width="50dp"
             android:layout_height="44dp"
             android:layout_weight="1"
-            tools:srcCompat="@tools:sample/avatars" />
+            android:padding="8dp"
+            tools:src="@tools:sample/avatars" />
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imageView3"
             android:layout_width="50dp"
             android:layout_height="44dp"
             android:layout_weight="1"
-            tools:srcCompat="@tools:sample/avatars" />
+            android:padding="8dp"
+            tools:src="@tools:sample/avatars" />
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imageView2"
             android:layout_width="50dp"
             android:layout_height="44dp"
             android:layout_weight="1"
-            tools:srcCompat="@tools:sample/avatars" />
+            android:padding="8dp"
+            tools:src="@tools:sample/avatars" />
     </LinearLayout>
 
     <android.support.constraint.Guideline
