@@ -20,6 +20,7 @@ public class DateUtils {
      */
     public static Calendar getCalendar() {
         Calendar calendar = Calendar.getInstance();
+        calendar.setFirstDayOfWeek(Calendar.MONDAY);
         setMidnight(calendar);
 
         return calendar;
