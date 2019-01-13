@@ -40,10 +40,11 @@
             android:layout_height="42dp"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="18sp"
+            android:textSize="25sp"
             app:layout_constraintLeft_toRightOf="@id/previousButton"
             app:layout_constraintRight_toLeftOf="@id/forwardButton"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Gennaio 2019" />
 
 
     </android.support.constraint.ConstraintLayout>
@@ -123,7 +124,7 @@
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
-        android:layout_height="2dp"
+        android:layout_height="1dp"
         android:layout_marginLeft="56dp"
         android:layout_marginBottom="4dp"
         android:background="#D696BB" />
